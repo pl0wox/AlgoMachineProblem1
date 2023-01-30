@@ -6,9 +6,28 @@
 //
 
 #include <iostream>
+#include <stack>
+#include <queue>
+#include <string>
+#include <iterator>
+using namespace std;
 
-int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
+char isOperator (char ch);
+int main(){
+
+    string expression = "a+b*c+d";
+    //cout << "Enter your expression: ";
+    //cin >> expression;
+    
+
+    char exptochar[expression.length()];
+    strcpy(exptochar, expression.c_str());
+    
+    stack<char> Operator_Stack;
+    
+    cout << endl;
+
+    //cout << "\nPostfix\nExpression\t\tOperator\t\tOperand\n";
     return 0;
 }
+
