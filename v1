@@ -1,0 +1,113 @@
+#include <iostream>
+#include <vector>
+#include <iomanip>
+#include <string>
+#include <math.h>
+#include <algorithm>
+
+using namespace std;
+
+void algo(int z);
+bool isMarked(string x);
+void printTable(vector<string> x);
+int main() {
+    int num_rows = 3;
+    int num_columns = 3;
+    int counter = 0;
+    algo(100);
+
+//    string tostring;
+//    vector<string> table;
+//    vector<string> prime;
+//
+//    for(int i = 1; i <= 100; i++){
+//        tostring = to_string(i);
+//        table.push_back(tostring);
+//    }
+
+
+
+
+
+//    for (int i = 2; i <= 100; i++) {
+//        tostring = to_string(i);
+//        if (!isMarked(tostring)) {
+//            table.push_back(tostring);
+//            cout << setfill(' ') << setw(8);
+//            cout << table.at(i);
+//            counter++;
+//            if (counter == 10) {
+//                counter = 0;
+//                cout << endl;
+//            }
+//
+//        }
+//        else{
+//            for (int j = i; j <= 100; j++) {
+//                if (j % i == 0) {
+//                    tostring = to_string(j);
+//                    table.push_back("[" + tostring + "]");
+//                    cout << setfill(' ') << setw(8);
+//
+//
+//                }
+//            }
+//        }
+//    }
+
+        return 0;
+    }
+
+    void algo(int z){
+
+    string tostring;
+    string result_string;
+    vector<string> table;
+    vector<string> prime;
+    int result = 0;
+    int counter = 0;
+
+    for(int i = 1; i <= z; i++){
+        tostring = to_string(i);
+        table.push_back(tostring);
+    }
+
+    for(int j = 1; j < table.size(); j++){
+        if(!isMarked(table.at(j))){
+            for(int k = 2; k <= sqrt(z); k++){      // loop up to 10 times
+
+                if(!isMarked(table.at(k-1))){       // ask if its marked
+                    for(int l = k; j <= z; l++){
+
+                    }
+                }
+            }
+        }
+    }
+
+       printTable(table);
+
+
+
+    }
+
+    void printTable(vector<string> x){
+    int counter;
+        for(int l = 0; l < x.size(); l++){
+            cout << setfill(' ') << setw(8);
+            cout << x.at(l);
+
+            counter++;
+            if (counter == 10) {
+                counter = 0;
+                cout << endl;
+            }
+        }
+}
+    bool isMarked(string x) {
+        if (x.front() == '[') {
+            return true;
+        }
+        return false;
+    }
+
